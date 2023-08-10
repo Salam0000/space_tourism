@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+}
+
+ul::after {
+    position: absolute;
+    /* bottom: -25px; */
+    left: -300px;
+    z-index: 2;
+    content: "";
+    height: 2px;
+    width: 350px;
+    background-color: gray;
+}
+
+.icon {
+    position: relative;
+    margin-left: 24px;
+}
+
+.list {
+    display: none;
+}
+
+ul {
+    height: 100%;
+    width: 70%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+body {
+    font-family: "Trirong", sans-serif;
+    background-image: url(starter-code/assets/home/background-home-desktop.jpg);
+    color: white;
+    font-size: 18px;
+}
+
+main {
+    margin: auto;
+    margin-top: 100px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+}
+
+section {
+    width: 60%;
+}
+
+span:last-child {
+    display: block;
+    font-size: 150px;
+    font-weight: bold;
+    /* background-image: url(starter-code/assets/crew/background-crew-desktop.jpg); */
+    /* background-repeat: no-repeat;
+    -webkit-background-clip: text; */
+    /* 
+    vendor prfix : like -webkit for chrome
+    for the new proprites the browser do not know it 
+    it means it still under developing
+    */
+    /* color: transparent; */
+}
+
+span:first-child {
+    font-size: 30px;
+}
+
+div {
+    background-color: white;
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+ul li {
+    position: relative;
+}
+
+.active::after {
+    position: absolute;
+    bottom: -25px;
+    right: -5px;
+    content: "";
+    height: 5px;
+    width: 100px;
+    background-color: white;
+}
+
+#close {
+    display: none;
+}
+
+@media (max-width:767px) {
+    hr {
+        display: none;
+    }
+
+    ul {
+        position: absolute;
+        right: 20px;
+        top: 100px;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        background-color: none;
+        background: white;
+        color: black;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        display: none;
+    }
+
+    ul::after {
+        display: none;
+    }
+
+    header {
+        margin-bottom: 20px;
+    }
+
+    .list {
+        display: flex;
+        margin-right: 24px;
+    }
+
+    main {
+        margin-top: 0;
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+    }
+
+    div {
+        margin-bottom: 10px;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    span:first-child {
+        font-size: 28px;
+        width: 100%;
+    }
+
+    span:last-child {
+        font-size: 100px;
+    }
+}
